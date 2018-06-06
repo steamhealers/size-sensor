@@ -4,7 +4,7 @@
  */
 
 import id from './id';
-import { Sensor } from './Sensor';
+import ObjectSensor from './sensor/ObjectSensor';
 import { SizeSensorId } from './constant';
 
 /**
@@ -30,7 +30,7 @@ export const getSensor = element => {
   const newId = id();
   element.setAttribute(SizeSensorId, newId);
 
-  const sensor = new Sensor(element);
+  const sensor = new ObjectSensor(element);
   // 添加到池子中
   Sensors[newId] = sensor;
 
@@ -42,10 +42,13 @@ export const getSensor = element => {
  * @param sensor
  */
 export const removeSensor = sensor => {
+  const sensorId = sensor.element.getAttribute(SizeSensorId);
+
+  // 移除 attribute
+  sensor.element.removeAttribute(SizeSensorId);
   // 移除 sensor 对应的 事件 和 dom 结构
   sensor.destroy();
 
-  const sensorId = sensor.element.getAttribute(SizeSensorId);
   // 存在则从 pool 中移除
   if (sensorId && Sensors[sensorId]) {
     delete Sensors[sensorId];

@@ -10,13 +10,15 @@
         ]
       ],
       "plugins": [
-        "transform-class-properties"
+        "transform-class-properties",
+        "external-helpers"
       ]
     },
     "babel": {
       "presets": ["env"],
       "plugins": [
         "transform-class-properties",
+        "external-helpers",
         "add-module-exports"
       ]
     }

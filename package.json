@@ -1,6 +1,6 @@
 {
   "name": "size-sensor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "DOM element size sensor which will callback when size changed.",
   "main": "lib/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "size-limit": [
     {
-      "limit": "800 B",
+      "limit": "1.5 KB",
       "path": "dist/size-sensor.min.js"
     }
   ],
@@ -28,8 +28,8 @@
   ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-jest": "^22.4.3",
     "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "coveralls": "^3.0.0",
